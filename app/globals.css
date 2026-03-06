@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0c;
+  --foreground: #ffffff;
+  --accent: #3b82f6;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* --- 共通部品（Tailwindの @apply で一括管理） --- */
+@layer components {
+  .section-header {
+    @apply flex flex-col items-center mb-20;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight;
+  }
+
+  .section-line {
+    @apply w-24 h-1 bg-blue-600 rounded-full;
+  }
+
+  .monochrome-card {
+    @apply glass-card p-8 rounded-[2rem] border border-white/10;
+  }
+
+  .badge {
+    @apply text-xs font-semibold tracking-wide text-neutral-200 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full;
+  }
+
+  .hover-link {
+    @apply text-neutral-400 hover:text-white transition-colors;
+  }
+}
+
+/* 背景のぼんやりした光の演出 */
+.bg-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% -20%, #1e293b, transparent 50%),
+    radial-gradient(circle at 0% 100%, #0f172a, transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ガラスのようなカード質感 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-5px);
+}
