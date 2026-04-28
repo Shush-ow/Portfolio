@@ -8,7 +8,7 @@ const projects = [
     image: "/images/home.png",
     tags: ["React", "TypeScript", "AWS Lambda", "Python", "Amazon Bedrock"],
     links: {
-      github: "https://github.com/Shush-ow/aws", // ご自身のURLに
+      github: "https://github.com/Shush-ow/aws",
     },
     status: "Maintenance",
     highlights: ["S3+CloudFrontで月間コストを数円に抑制", "rapidfuzzによる避難所の曖昧検索を実装"]
@@ -28,17 +28,30 @@ export default function Works() {
           <div key={project.title} className="monochrome-card group">
             <div className="flex flex-col md:flex-row gap-8">
 
-              <div className="md:w-2/5 relative aspect-video md:aspect-auto rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900">
-                <img 
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="md:w-2/5 block relative aspect-video md:aspect-auto rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900"
+              >
+                <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
                 />
-              </div>
+              </a>
 
               <div className="md:w-3/5 flex flex-col justify-center space-y-4">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                <div className="flex justify-between items-start gap-4">
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-2xl font-bold text-white hover:underline underline-offset-4"
+                  >
+                    {project.title}
+                  </a>
+
                   <a href={project.links.github} target="_blank" rel="noreferrer" className="hover-link">
                     <Github size={22} />
                   </a>
@@ -72,6 +85,7 @@ export default function Works() {
                   </div>
                 )}
               </div>
+
             </div>
           </div>
         ))}

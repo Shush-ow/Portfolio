@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Header from '../components/Header'; // ← 追加: Headerを読み込む
 
 export const metadata: Metadata = {
-  title: 'Shush | Portfolio',
+  title: 'Shuji | Portfolio',
   description: 'サイバーセキュリティとフルスタック開発を学ぶ大学生のポートフォリオサイト',
 };
 
