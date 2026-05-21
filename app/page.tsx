@@ -6,14 +6,11 @@ import TechStack from '../components/TechStack';
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      {/* 背景のグロウ演出 */}
       <div className="bg-glow" />
       
-      {/* max-w-5xlに調整し、mx-autoで中央寄せを確実にします */}
       <div className="max-w-5xl mx-auto px-8 md:px-12">
         <Hero />
         
-        {/* セクション間の余白を広げ、ゆとりを持たせます */}
         <div className="space-y-48 pb-32">
           <About />
           <TechStack />

@@ -6,7 +6,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // スクロールされたらヘッダーの背景をすりガラスにするための仕掛け
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -15,7 +14,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // メニューを開いたままリサイズした時の崩れ防止（md以上で自動クローズ）
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
@@ -33,7 +31,6 @@ export default function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* 左側のロゴ */}
         <a 
           href="#" 
           className="text-xl font-bold text-white tracking-tighter hover:text-neutral-300 transition-colors"
@@ -41,14 +38,12 @@ export default function Header() {
           TOP
         </a>
 
-        {/* 右側のナビゲーションメニュー */}
         <nav className="hidden md:flex gap-6 text-sm font-medium text-neutral-400">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#tech" className="hover:text-white transition-colors">Tech</a>
           <a href="#works" className="hover:text-white transition-colors">Works</a>
         </nav>
 
-        {/* モバイルメニュー */}
         <button
           type="button"
           aria-label="menu"

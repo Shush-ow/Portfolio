@@ -23,7 +23,6 @@ export default function Hero() {
           <span className="text-white font-semibold">誰かの役に立つもの</span>を創り出す。
         </p>
         
-        {/* スクロールを促す小さなラインアニメーション */}
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}

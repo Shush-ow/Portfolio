@@ -1,10 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Header from '../components/Header'; // ← 追加: Headerを読み込む
+import Header from '../components/Header';
 
 export const metadata: Metadata = {
   title: 'Shuji | Portfolio',
-  description: 'サイバーセキュリティとフルスタック開発を学ぶ大学生のポートフォリオサイト',
+  description: 'サイバーセキュリティとフルスタック開発を学ぶ学生のポートフォリオサイト',
 };
 
 export default function RootLayout({
@@ -13,11 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // ↓ ここに scroll-smooth を追加して、滑らかなスクロールを実現！
-    <html lang="ja" className="scroll-smooth"> 
-      {/* fixed header の分だけ上に余白を確保 */}
+    <html lang="ja" className="scroll-smooth">
       <body className="pt-20">
-        <Header /> {/* 全ページ共通で一番上にHeaderを表示 */}
+        <Header />
         {children}
       </body>
     </html>
